@@ -1,20 +1,20 @@
-<img width=800 src="https://github.com/refact0r/midnight-discord/assets/34758569/7ab9402b-d987-42c5-b9bf-7ea144edfad9">
+<img width=800 src="https://github.com/viacoro/midnight-discord-red/assets/103315372/ca5ce084-50ea-41f5-9f77-20bfd7628ec2">
 
-# midnight
+# midnight red
 
-A darkened discord theme with rounded chat and sidebars.
+A darkened discord theme with rounded chat and sidebars and instead of the blue used in the original red accent colors.
 
-<img width=800 src="https://github.com/refact0r/midnight-discord/assets/34758569/f6b8c3ac-59e0-405c-b247-092232c21052">
+<img width=800 src="https://github.com/viacoro/midnight-discord-red/assets/103315372/c6f365d6-1a4e-4043-87e5-2bec2db7ddad">
 
 ## install
 
-Download from <https://betterdiscord.app/theme/midnight> or download this repo.
-
-Put the `midnight.theme.css` or `midnight-classic.theme.css` files into your betterdiscord (or other client) theme folder.
+Download and put the `midnight.theme.css` or `midnight-classic.theme.css` files into your betterdiscord (or other client) theme folder.
 
 IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!
  
 ## credits
+
+original [midnight theme](https://betterdiscord.app/theme/midnight) by <https://github.com/refact0r>
 
 original design inspired by <https://github.com/schnensch0/zelk>
 
