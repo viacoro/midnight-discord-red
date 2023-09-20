@@ -1,12 +1,12 @@
 /* change colors */
 .theme-dark {
 	--brand-experiment: hsl(220, 60%, 60%);
-
+	
 	--header-primary: hsl(220, 15%, 60%);
 	--header-secondary: hsl(220, 15%, 40%);
 	--text-normal: var(--header-primary);
 	--text-muted: hsl(220, 15%, 20%);
-	--text-link: hsl(197, 100%, 47.8%);
+	--text-link:  hsl(346, 80%, 60%);
 	--text-link-low-saturation: /* hsl(197, 100%, 52.9%) */ var(--text-link);
 	--text-positive: hsl(139, 66.8%, 58.6%);
 	--text-warning: hsl(38, 95.7%, 54.1%);
