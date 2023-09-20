@@ -1,14 +1,14 @@
 :root {
 	/* link color */
-	--link-color: hsl(190, 70%, 60%);
+	--link-color: hsl(346, 80%, 60%);
 	/* main accent color (mentions, folder icons, unread indicators) */
-	--accent-color: hsl(190, 60%, 50%);
+	--accent-color: hsl(346, 70%, 50%);
 	/* darker accent color (background of any accent items with text) */
-	--accent-background: hsl(190, 60%, 40%);
+	--accent-background: hsl(346, 60%, 40%);
 	/* even darker accent color (background of accent buttons when hover) */
-	--accent-background-2: hsl(190, 60%, 30%);
+	--accent-background-2: hsl(346, 60%, 30%);
 	/* even darker accent color (background of accent buttons when clicked) */
-	--accent-background-3: hsl(190, 60%, 20%);
+	--accent-background-3: hsl(346, 60%, 20%);
 	/* background of mention text and messages that mention you */
 	--mention-modifier: hsla(190, 60%, 50%, 0.1);
 	/* background of messages that mention you on hover */
