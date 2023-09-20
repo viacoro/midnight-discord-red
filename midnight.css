@@ -335,10 +335,11 @@
 	background-color: hsl(350, 50%, 50%) !important;
 }
 .typeWindows-2-g3UY .winButtonMinMax-3RsPUg:nth-child(3)::after {
-	background-color: hsl(150, 50%, 50%) !important;
+	background-color: hsl(50, 50%, 50%) !important;
 }
 .typeWindows-2-g3UY .winButtonMinMax-3RsPUg:nth-child(4)::after {
-	background-color: hsl(50, 50%, 50%) !important;
+	background-color: hsl(150, 50%, 50%) !important;
+	
 }
 .typeWindows-2-g3UY > div:hover::after {
 	transform: scale(1.1);
