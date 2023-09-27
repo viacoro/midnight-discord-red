@@ -4,7 +4,7 @@
 
 A darkened discord theme with rounded chat and sidebars. Now with red accent colors instead of the blue ones used in the original.
 
-<img width=800 src="https://github.com/viacoro/midnight-discord-red/assets/103315372/c6f365d6-1a4e-4043-87e5-2bec2db7ddad">
+<img width=800 src="https://github.com/viacoro/midnight-discord-red/assets/103315372/c6b35c34-e7ef-4fdb-915a-d6c04594acf6">
 
 ## install
 
