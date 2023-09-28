@@ -14,7 +14,7 @@ IMPORTANT: make sure to enable dark mode in discord settings for the theme to ap
  
 ## credits
 
-original [midnight theme](https://betterdiscord.app/theme/midnight) by <https://github.com/refact0r>
+original [midnight theme](https://betterdiscord.app/theme/midnight) by <https://github.com/refact0r>, please check him out!
 
 original design inspired by <https://github.com/schnensch0/zelk>
 
