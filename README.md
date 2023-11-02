@@ -8,9 +8,23 @@ A darkened discord theme with rounded chat and sidebars. Now with red accent col
 
 ## install
 
-Download and put the `midnight.theme.css` or `midnight-classic.theme.css` files into your betterdiscord (or other client) theme folder.
+*IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!*
 
-IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!
+### betterdiscord (or client with local theme folder)
+
+1. Download `midnight.theme.css` from <https://betterdiscord.app/theme/midnight> or this repo.
+2. Put the file into your betterdiscord (or other client) theme folder.
+3. (optional) Customize the variables in `midnight.theme.css`.
+
+### vencord (or client without local theme folder)
+
+1. Paste `https://raw.githubusercontent.com/refact0r/midnight-discord/master/midnight.css` into the theme link box.
+3. (optional) Copy and paste the contents of `midnight.theme.css` into your quickcss file.
+4. (optional) Customize the variables in quickcss.
+
+## server
+
+need help? want to report a bug? want to give feedback on upcoming changes? https://discord.gg/nz87hXyvcy
  
 ## credits
 
@@ -18,4 +32,6 @@ original [midnight theme](https://betterdiscord.app/theme/midnight) by <https://
 
 original design inspired by <https://github.com/schnensch0/zelk>
 
-window controls from <https://github.com/Dyzean/Tokyo-Night>
+window controls design from <https://github.com/Dyzean/Tokyo-Night>
+
+thanks to all the [contributors](https://github.com/refact0r/midnight-discord/graphs/contributors)!
