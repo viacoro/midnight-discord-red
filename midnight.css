@@ -52,8 +52,8 @@
 	--message-hover: hsla(220, 0%, 0%, 0.1);
 
 	/* font */
-	--font-primary: 'figtree'; /* change to 'gg sans' for default discord font */
-	--font-display: 'figtree'; /* change to 'gg sans' for default discord font */
+	--font-primary: 'gg sans'; /* change to 'gg sans' for default discord font */
+	--font-display: 'gg sans'; /* change to 'gg sans' for default discord font */
 
 	/* top left icon */
 	--moon-icon: block; /* change to 'none' to hide moon icon */
