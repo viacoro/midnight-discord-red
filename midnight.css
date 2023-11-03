@@ -729,13 +729,13 @@ a[href="https://support.discord.com"] /* hide help */
 	--brand-500: var(--accent-3);
 	--brand-560: var(--accent-4);
 	--brand-600: var(--accent-5);
-
+/*
 	--green-330: var(--accent-1);
 	--green-360: var(--accent-3);
 	--green-430: var(--accent-4);
 	--green-500: var(--accent-4);
 	--green-530: var(--accent-5);
-
+*/
 	--brand-experiment-15a: var(
 		--mention
 	); /* background of reacted reactions */
