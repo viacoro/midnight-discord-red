@@ -24,8 +24,8 @@ A darkened discord theme with rounded chat and sidebars. Now with red accent col
 
 ## server
 
-need help? want to report a bug? want to give feedback on upcoming changes? https://discord.gg/nz87hXyvcy
- 
+need help? want to report a bug? want to give feedback on upcoming changes? join <https://discord.gg/nz87hXyvcy>
+
 ## credits
 
 original [midnight theme](https://betterdiscord.app/theme/midnight) by <https://github.com/refact0r>, please check him out!
