@@ -2,25 +2,42 @@
  * @name midnight
  * @description A darkened discord theme.
  * @author refact0r
- * @version 1.6.0
+ * @version 1.6.1
  * @source https://github.com/refact0r/midnight-discord
  * @authorId 508863359777505290
 */
 
-/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!! */
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
 
 @import url('https://refact0r.github.io/midnight-discord/midnight.css');
 
-/* change colors and variables here */
+/* customize things here */
 :root {
-	/* font */
-	--font-primary: 'figtree'; /* change to 'gg sans' for default discord font */
-	--font-display: 'figtree'; /* change to 'gg sans' for default discord font */
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'figtree';
+
+	/* color of green online dot, change to #23a55a for default green */
+	--online-indicator: var(--accent-2);
+
+	/* top left icon */
+	--moon-icon: block; /* change to none to hide moon icon */
+	--discord-icon: none; /* change to block to show default discord icon */
 
 	/* amount of spacing and padding */
 	--spacing: 12px;
-	/* radius of round corners */
-	--roundness: 16px;
+
+	/* roundness of big panel outer corners */
+	--roundness-xl: 22px;
+	/* popout panels */
+	--roundness-l: 20px;
+	/* smaller panels, images, embeds */
+	--roundness-m: 16px;
+	/* members, settings inputs */
+	--roundness-s: 12px;
+	/* channels, buttons*/
+	--roundness-xs: 10px;
+	/* searchbar, small elements */
+	--roundness-xxs: 8px;
 
 	/* color of links */
 	--accent-1: hsl(346, 80%, 60%);
@@ -58,15 +75,10 @@
 	--bg-3: hsl(220, 15%, 13%);
 	/* main background color */
 	--bg-4: hsl(220, 15%, 10%);
-
 	/* color of channels and icon buttons when hovered */
 	--hover: hsla(230, 20%, 40%, 0.1);
 	/* color of channels and icon buttons when clicked or selected */
 	--active: hsla(220, 20%, 40%, 0.2);
 	/* color of messages when hovered */
 	--message-hover: hsla(220, 0%, 0%, 0.1);
-
-	/* top left icon */
-	--moon-icon: block; /* change to 'none' to hide moon icon */
-	--discord-icon: none; /* change to 'block' to show default discord icon */
 }

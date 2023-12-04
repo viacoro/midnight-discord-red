@@ -1,12 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* customize things here */
 :root {
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'figtree';
+
+	/* color of online status dot, change to #23a55a for default green */
+	--online-indicator: var(--accent-2);
+
+	/* top left text */
+	--corner-text: 'Midnight';
+
+	/* home icon */
+	--moon-icon: block; /* change to none to hide moon icon */
+	--discord-icon: none; /* change to block to show default discord icon */
+
 	/* amount of spacing and padding */
 	--spacing: 12px;
-	/* radius of round corners */
-	--roundness: 16px;
 
-	/* color of links */
+	/* animations */
+	--hover-push: 0.2s ease;
+
+	/* corner roundness (border-radius) */
+	--roundness-xl: 22px; /* roundness of big panel outer corners */
+	--roundness-l: 20px; /* popout panels */
+	--roundness-m: 16px; /* smaller panels, images, embeds */
+	--roundness-s: 12px; /* members, settings inputs */
+	--roundness-xs: 10px; /* channels, buttons */
+	--roundness-xxs: 8px; /* searchbar, small elements */
+
+	/* accent colors */
 	--accent-1: hsl(346, 80%, 60%);
 	/* color of unread dividers and some indicators */
 	--accent-2: hsl(346, 70%, 50%);
@@ -21,50 +44,34 @@
 	--mention: hsla(346, 60%, 50%, 0.1);
 	/* color of mentions and messages that mention you when hovered */
 	--mention-hover: hsla(346, 60%, 50%, 0.05);
-	/* color of green online dot, change to #23a55a for default green */
-	--online-indicator: #23a55a;
 
-	/* color of bright text on colored buttons */
-	--text-1: hsl(220, 40%, 90%);
-	/* color of headings and important text */
-	--text-2: hsl(220, 25%, 70%);
-	/* color of normal text */
-	--text-3: hsl(220, 15%, 60%);
-	/* color of icon buttons and channels */
-	--text-4: hsl(220, 15%, 40%);
-	/* color of muted channels/chats and timestamps */
-	--text-5: hsl(220, 15%, 25%);
+	/* text colors */
+	--text-1: hsl(220, 40%, 90%); /* bright text on colored elements */
+	--text-2: hsl(220, 25%, 70%); /* headings and important text */
+	--text-3: hsl(220, 15%, 60%); /* normal text */
+	--text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
+	--text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
 
-	/* color of dark buttons when clicked */
-	--bg-1: hsl(220, 15%, 20%);
-	/* color of dark buttons */
-	--bg-2: hsl(220, 15%, 16%);
-	/* color of spacing around panels and secondary elements */
-	--bg-3: hsl(220, 15%, 13%);
-	/* main background color */
-	--bg-4: hsl(220, 15%, 10%);
+	/* background and dark colors */
+	--bg-1: hsl(220, 15%, 20%); /* dark buttons when clicked */
+	--bg-2: hsl(220, 15%, 16%); /* dark buttons */
+	--bg-3: hsl(220, 15%, 13%); /* spacing, secondary elements */
+	--bg-4: hsl(220, 15%, 10%); /* main background color */
+	--hover: hsla(230, 20%, 40%, 0.1); /* channels and buttons when hovered */
+	--active: hsla(220, 20%, 40%, 0.2); /* channels and buttons when clicked or selected */
+	--message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+}
 
-	/* color of channels and icon buttons when hovered */
-	--hover: hsla(230, 20%, 40%, 0.1);
-	/* color of channels and icon buttons when clicked or selected */
-	--active: hsla(220, 20%, 40%, 0.2);
-	/* color of messages when hovered */
-	--message-hover: hsla(220, 0%, 0%, 0.1);
-
-	/* font */
+:root {
 	--font-primary: 'gg sans'; /* change to 'gg sans' for default discord font */
 	--font-display: 'gg sans'; /* change to 'gg sans' for default discord font */
 
-	/* top left icon */
-	--moon-icon: block; /* change to 'none' to hide moon icon */
-	--discord-icon: none; /* change to 'block' to show default discord icon */
 }
 
 /* modify colors */
 #app-mount .container__590e2 /* channel list */,
 .privateChannels__93473 /* dms list */,
 #app-mount .container_ca50b9 /* user panel inner */,
-.container_b2ce9c /* member list */,
 .members__9f47b /* member list inner */,
 .member_aa4760 /* member list members */,
 .searchResultsWrap__9f374 /* search results */,
@@ -78,7 +85,8 @@
 .theme-dark .container__7590f /* browse channels inner */,
 .chat__52833.background_cb0a80 /* server guide body */,
 .theme-dark .scrollerContainer_bf5dbd /* channels and roles customize */,
-.shop_b31ed2 /* shop */ {
+.shop_b31ed2 /* shop */,
+.wrapper_bd2abe.minimum_ebf000 /* private call */ {
 	background: var(--bg-4);
 }
 .mainCard__8a660 /* forum post */ {
@@ -100,7 +108,8 @@
 .chat__52833 /* chat + member list */,
 .sidebar_ded4b5 /* channel sidebar */,
 .privateChannels__93473 .scroller__4b984 /* dms list inner */,
-.theme-dark .innerHeader_afca2f:after /* channels and roles header shadow */ {
+.theme-dark .innerHeader_afca2f:after /* channels and roles header shadow */,
+.attachedBars_da3c74 /* reply bar underneath */ {
 	background: none;
 }
 .selected__0b1ad .header__104ca, .clickable__2d589 .header__104ca:hover /* server name hover */ {
@@ -112,7 +121,7 @@
 div.message__80c10.replying_d7b6ad::before /* change reply message bar to neutral */ {
 	background: var(--text-2);
 }
-.activeButtonChild__6e162 {
+.activeButtonChild__6e162 /* send button */ {
 	color: var(--accent-2);
 }
 .container_ca50b9 /* user panel button strikethroughs */,
@@ -121,9 +130,10 @@ div.message__80c10.replying_d7b6ad::before /* change reply message bar to neutra
 	--status-danger: var(--accent-2);
 }
 .expandedFolderIconWrapper__458cf > svg {
-	color: var(--accent-2) !important;
+	color: var(--accent-3) !important;
 }
-.divider_b9338f /* unread divider */ {
+.divider_b9338f /* unread divider */,
+.mention__1afd3 /* NEW unread pill */ {
 	--status-danger: var(--accent-3);
 }
 .message__80c10.mentioned__58017:before /* mention message left edge */ {
@@ -145,10 +155,24 @@ path[fill='rgba(35, 165, 90, 1)'] {
 .lookFilled__19298.colorBrand_b2253e .defaultColor__77578 /* vc choose an activity button */ {
 	color: var(--white-500);
 }
+::selection {
+	background: var(--accent-4);
+	color: white;
+}
+
+/* fix weird message bar padding */
+.clipContainer__99c30 {
+	padding-top: 0;
+	margin-top: 0;
+}
 
 /* change online indicator color */
 rect[fill='#23a55a'] {
 	fill: var(--online-indicator) !important;
+}
+.status__1c26d[style='background-color: var(--green-360);'],
+.status__1c26d[style='background-color: currentcolor;'] {
+	background-color: var(--online-indicator) !important;
 }
 
 /* separate header bar */
@@ -168,7 +192,13 @@ rect[fill='#23a55a'] {
 	background: var(--background-primary);
 	width: 100%;
 	height: 48px;
-	border-radius: var(--roundness) var(--roundness) 0 0;
+	border-radius: var(--roundness-xl) var(--roundness-xl) 0 0;
+}
+.wrapper_bd2abe.minimum_ebf000 ~ .content__1a4fe .container__93316::before /* remove when in private call */ {
+	display: none;
+}
+.membersWrap__90226 /* fix members list height when not scroll */ {
+	height: 100%;
 }
 
 /* rearrange toolbar */
@@ -195,7 +225,7 @@ a[href="https://support.discord.com"] /* hide help */
 
 /* add spacing */
 .base__3e6af /* outside edges */ {
-	margin: 0 var(--spacing) var(--spacing) var(--spacing);
+	margin: 0 var(--spacing) var(--spacing) 0;
 }
 .sidebar_ded4b5 /* channel list and user panel */,
 .content__1a4fe /* between chat and member list */ {
@@ -211,9 +241,12 @@ a[href="https://support.discord.com"] /* hide help */
 	width: var(--spacing);
 }
 .wrapper_bd2abe.fullScreen__5263c .callContainer_cbde45 /* fullscreen vc */ {
-	margin: var(--spacing) 0 0 0;
+	margin-top: var(--spacing);
 }
-
+.notice__5fd4c /* banner notice */,
+.wrapper_bd2abe.minimum_ebf000 /* private call */ {
+	margin-bottom: var(--spacing);
+}
 /* fix padding */
 #vc-spotify-player /* vencord spotify */,
 .container_d667ff /* vc panel */,
@@ -233,8 +266,11 @@ a[href="https://support.discord.com"] /* hide help */
 .container_def45c /* message request */,
 #app-mount .callContainer_cbde45 /* vc */, 
 .chat__52833 /* general chat container (for browse channels page */,
-.animatedContainer__341f6 /* server image card */ {
-	border-radius: var(--roundness);
+.animatedContainer__341f6 /* server image card */,
+.notice__5fd4c /* banner notice */,
+.wrapper_bd2abe.minimum_ebf000, /* private call */
+.wrapper_bd2abe.minimum_ebf000 ~ .content__1a4fe /* chat under private call */ {
+	border-radius: var(--roundness-xl);
 	overflow: hidden;
 }
 .container__93316 /* main chat */,
@@ -246,13 +282,85 @@ a[href="https://support.discord.com"] /* hide help */
 .userPanelOuter__880e5 /* profile panel inner */,
 .userPanelInner_eddf4c /* profile panel inner inner */,
 .userPanelInner_eddf4c::before /* profile panel inner inner filter */ {
-	border-radius: 0 0 var(--roundness) var(--roundness);
+	border-radius: 0 0 var(--roundness-xl) var(--roundness-xl);
+}
+
+/* more rounded corners */
+.messagesPopoutWrap_b3b384 /* inbox, pinned messages popout */,
+.container__8261a /* thread popout */,
+.menu_dc52c6 .item__183e8d /* server option popout */,
+.userPopoutOuter_d739b2 /* user profile popout */,
+.root_ba16f0 /* user profile modal */,
+.contentWrapper__321ed /* emoji, sticker, gif pickers */,
+.root_a28985 /* edit modal */,
+.footer__89240 /* edit modal footer */ {
+	border-radius: var(--roundness-l);
+}
+.roundedBanner__9fa0a /* user profile popout top */ {
+	border-radius: calc(var(--roundness-l) - 4px) calc(var(--roundness-l) - 4px) 0 0;
+}
+.userPopoutInner_f545a3:before /* user profile popout bottom */,
+.userProfileModalInner__7c87d:before /* user profile modal bottom */ {
+	border-radius: calc(var(--roundness-l) - 4px);
+}
+.overlayBackground__86b78 /* user profile inner */ {
+	border-radius: var(--roundness-s);
+}
+.menu_dc52c6 /* general popouts */,
+.embed_d3cbe3 /* embeds */,
+.mediaAttachmentsContainer_edba75 /* image container */,
+.oneByOneGridSingle__01756 /* image container single */,
+.imageContainer__04362 .imageWrapper_fd6587 /* gif wrapper */,
+.markup_a7e664 code /* code block */,
+.itemCard__1f162 /* friend activity */,
+.peopleListItem_d14722:hover /* online list friends */,
+.withTagAsButton_cc125f:hover, .withTagless__98b7d:hover /* user panel username */ {
+	border-radius: var(--roundness-m);
+}
+.scrollableContainer__33e06 /* message bar */,
+.channelTextArea__2e60f /* message bar underneath */,
+.select__0eb48 /* bot dropdown select */,
+.layout_bb8e67 /* members */,
+.interactive__776ee /* dms */,
+.container__767d1 /* thread link */,
+.input_d266e7 /* settings inputs */,
+.item_b7fb7e /* settings radiobutton bars */,
+.item_b7fb7e .radioBar__40e1b /* settings radiobutton bars */,
+.tooltip__01384 /* server hover name */ {
+	border-radius: var(--roundness-s);
+}
+.scrollableContainer__33e06.hasConnectedBar__277ab /* fix message bar with reply bar */ {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.replyBar_b64d74 {
+	border-radius: var(--roundness-s) var(--roundness-s) 0 0;
+}
+.link__95dc0 /* channels */,
+.content_b60865 /* member connected to vc */,
+.side_b4b3f6 .item__48dda /* settings tabs */,
+button.button_afdfd9 /* small buttons */,
+.container__7712a /* friend searchbar */,
+.item__183e8 /* general popout buttons */,
+.icon_c1b424 /* streaming icon */,
+#vc-spotify-album-image,
+.background__584e7 /* settings nitro tab selected */ {
+	border-radius: var(--roundness-xs);
+}
+.wrapper_f46140 /* mentions */,
+.searchBar_e0c60b /* search bar */,
+.searchBar_e4ea2a .searchBarComponent__22760 /* find conversation search bar */,
+.topPill__0cdf1 .item__48dda /* friend online/categories */ {
+	border-radius: var(--roundness-xxs);
+}
+#app-mount .centerButton__3205b /* fix vc buttons */ {
+	border-radius: 50%;
 }
 
 /* separate guilds panel background */
 .guilds__2b93a {
 	background: var(--bg-4);
-	border-radius: var(--roundness);
+	border-radius: var(--roundness-xl);
 	margin: 0 0 var(--spacing) var(--spacing);
 }
 .guilds__2b93a.hidden__7c832 {
@@ -261,25 +369,31 @@ a[href="https://support.discord.com"] /* hide help */
 #app-mount .scroller__3d071 {
 	padding: 12px 0;
 }
+.base__3e6af {
+	margin-left: var(--spacing);
+}
 .guilds__2b93a::after /* add bottom scroll shadow */,
-.members__9f47b::after {
+.membersWrap__90226::after {
 	content: '';
 	position: absolute;
-	background: linear-gradient(transparent, var(--bg-4));
-	bottom: 0px;
-	width: 100%;
-	height: 20px;
+	background: linear-gradient(transparent 85%, var(--bg-4) 100%);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
 	pointer-events: none;
+	border-radius: 0 0 var(--roundness-xl) var(--roundness-xl);
 }
 .guilds__2b93a::before /* add top scroll shadow */ {
 	content: '';
 	position: absolute;
-	background: linear-gradient(var(--bg-4), transparent);
-	top: 0px;
-	width: 100%;
-	height: 20px;
+	background: linear-gradient(var(--bg-4) 0%, transparent 15%);
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
 	pointer-events: none;
-	z-index: 2;
+	z-index: 1;
 }
 .childWrapper__01b9c {
 	background: var(--bg-3);
@@ -290,12 +404,12 @@ a[href="https://support.discord.com"] /* hide help */
 .container__037ed > [style$='display: flex;'] {
 	margin: 0 0 var(--spacing) var(--spacing);
 }
-/* UNCOMMENT IF YOU REMOVE THE ABOVE SECTION "separate guilds panel background" */
-.expandedFolderBackground__1bec6 /* expanded folder bg */,
-.folder__17546 /* folder circle when expanded */,
-.folderIconWrapper__72239 /* folder circle inner */ {
-	/* background-color: var(--bg-4) !important; */
-}
+/* UNCOMMENT IF YOU REMOVE THE ABOVE SECTION "separate guilds panel background"
+.expandedFolderBackground__1bec6,
+.folder__17546,
+.folderIconWrapper__72239 {
+	background-color: var(--bg-4) !important;
+} */
 
 /* extra top margin for macos and custom clients */
 .container__037ed {
@@ -304,37 +418,53 @@ a[href="https://support.discord.com"] /* hide help */
 .platform-win .container__037ed {
 	margin-top: 0;
 }
+/* UNCOMMENT if you want to make panels evenly sized on macos 
+.platform-osx .wrapper_a7e7a8 {
+    margin-top: 0;
+}
+.platform-osx .container__037ed {
+    margin-top: 32px;
+} */
 
 /* top corner title */
+[class^='wordmarkWindows'] {
+	padding: 4px var(--spacing);
+}
 [class^='wordmarkWindows'] > svg {
 	display: none;
 }
 [class^='wordmarkWindows']::after {
-	content: 'Midnight';
+	content: var(--corner-text);
 	display: block;
 	position: relative;
-	width: 200px;
 	height: 16px;
 	line-height: 16px;
-	font-family: var(--font-headline);
-	font-size: 10px;
-	font-weight: 600;
+	font-family: var(--font);
+	font-size: 13px;
+	font-weight: 900;
 	color: var(--text-5);
+	transform: scaleX(1.2);
+	margin-left: 6px;
+}
+
+/* top bar height */
+[class^='typeWindows'] {
+	height: calc(var(--spacing) + 8px);
 }
 
 /* window controls */
-[class^='typeWindows'] {
-	height: 20px;
-}
 [class^='winButton'] > svg {
 	display: none;
 }
 [class^='winButton'] {
 	background: none !important;
 	top: 0;
-	width: 20px;
-	height: 20px;
+	width: calc(var(--spacing) + 8px);
+	height: calc(var(--spacing) + 8px);
 	margin: -2px 4px 0px 0px;
+}
+[class^='winButtonClose'] {
+	margin: -2px calc(var(--spacing) - 4px) 0px 0px;
 }
 [class^='winButton']::after {
 	content: '';
@@ -360,10 +490,10 @@ a[href="https://support.discord.com"] /* hide help */
 }
 
 /* add moon */
-.childWrapper__01b9c > svg {
+.childWrapper__01b9c > svg:not(.favoriteIcon__91c06) {
 	display: var(--discord-icon);
 }
-.childWrapper__01b9c:has(> svg)::before {
+.childWrapper__01b9c:has(> svg:not(.favoriteIcon__91c06))::before {
 	content: '';
 	display: var(--moon-icon);
 	position: absolute;
@@ -400,6 +530,13 @@ a[href="https://support.discord.com"] /* hide help */
 	width: 4px;
 	border-radius: 4px;
 }
+/* modify embeds */
+.embedFull__8dc21 {
+	border: 4px solid var(--bg-2);
+	border-top-color: transparent !important;
+	border-bottom-color: transparent !important;
+	border-right-color: transparent !important;
+}
 
 /* make emoji selector same color */
 .emojiButtonNormal__73cd3 .sprite__294b3 {
@@ -408,6 +545,27 @@ a[href="https://support.discord.com"] /* hide help */
 /* filter login image */
 .artwork__8fc92 {
 	filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4);
+}
+
+/* horizontal server list fix */
+#app-mount .app_b1f720 .base__3e6af {
+	top: calc(var(--server-container) + var(--spacing)) !important;
+}
+
+/* experimental transitions */
+.wrapper__7bcde .link__95dc0 /* channels */,
+.container__4f20e /* members */,
+.channel_c21703 /* dms */,
+.side_b4b3f6 .item__48dda /* settings */ {
+	transition: margin-left var(--hover-push);
+}
+.wrapper__7bcde:hover .link__95dc0,
+.side_b4b3f6 .item__48dda:hover {
+	margin-left: 10px;
+}
+.container__4f20e:hover,
+.channel_c21703:hover {
+	margin-left: 18px;
 }
 
 .theme-dark {
@@ -453,9 +611,7 @@ a[href="https://support.discord.com"] /* hide help */
 	--border-faint: hsl(var(--white-500-hsl) / 0.03);
 	--border-strong: hsl(var(--white-500-hsl) / 0.16);
 	--border-subtle: hsl(var(--white-500-hsl) / 0.08);
-	--bug-reporter-modal-submitting-background: hsl(
-		var(--primary-800-hsl) / 0.6
-	);
+	--bug-reporter-modal-submitting-background: hsl(var(--primary-800-hsl) / 0.6);
 	--button-creator-revenue-background: var(--teal-430);
 	--button-danger-background: var(--red-430);
 	--button-danger-background-active: var(--red-530);
@@ -503,7 +659,7 @@ a[href="https://support.discord.com"] /* hide help */
 	--button-positive-background-hover: var(--green-500);
 	--button-secondary-background: var(--bg-2);
 	--button-secondary-background-active: var(--text-5);
-	--button-secondary-background-disabled: red;
+	--button-secondary-background-disabled: var(--bg-2);
 	--button-secondary-background-hover: var(--bg-1);
 	--card-gradient-bg: hsl(var(--black-500-hsl) / 0.4);
 	--card-gradient-pressed-bg: hsl(var(--black-500-hsl) / 0.5);
@@ -530,9 +686,7 @@ a[href="https://support.discord.com"] /* hide help */
 	--deprecated-card-bg: hsl(var(--primary-700-hsl) / 0.6);
 	--deprecated-card-editable-bg: hsl(var(--primary-700-hsl) / 0.3);
 	--deprecated-quickswitcher-input-background: var(--primary-400);
-	--deprecated-quickswitcher-input-placeholder: hsl(
-		var(--white-500-hsl) / 0.3
-	);
+	--deprecated-quickswitcher-input-placeholder: hsl(var(--white-500-hsl) / 0.3);
 	--deprecated-store-bg: var(--primary-600);
 	--deprecated-text-input-bg: var(--bg-3);
 	--deprecated-text-input-border: hsl(var(--black-500-hsl) / 0.3);
@@ -543,9 +697,7 @@ a[href="https://support.discord.com"] /* hide help */
 	--divider-strong: hsl(var(--white-500-hsl) / 0.16);
 	--divider-subtle: hsl(var(--white-500-hsl) / 0.08);
 	--focus-primary: var(--blue-345);
-	--forum-post-extra-media-count-container-background: hsl(
-		var(--primary-660-hsl) / 0.8
-	);
+	--forum-post-extra-media-count-container-background: hsl(var(--primary-660-hsl) / 0.8);
 	--forum-post-tag-background: hsl(var(--primary-660-hsl) / 0.9);
 	--guild-notifications-bottom-sheet-pill-background: var(--primary-700);
 	--header-muted: red;
@@ -597,12 +749,8 @@ a[href="https://support.discord.com"] /* hide help */
 	--profile-gradient-message-input-border: hsl(var(--primary-500-hsl) / 0.48);
 	--profile-gradient-note-background: hsl(var(--black-500-hsl) / 0.3);
 	--profile-gradient-overlay: hsl(var(--black-500-hsl) / 0.6);
-	--profile-gradient-overlay-synced-with-user-theme: hsl(
-		var(--black-500-hsl) / 0.8
-	);
-	--profile-gradient-profile-body-background-hover: hsl(
-		var(--white-500-hsl) / 0.16
-	);
+	--profile-gradient-overlay-synced-with-user-theme: hsl(var(--black-500-hsl) / 0.8);
+	--profile-gradient-profile-body-background-hover: hsl(var(--white-500-hsl) / 0.16);
 	--profile-gradient-role-pill-background: hsl(var(--primary-660-hsl) / 0.5);
 	--profile-gradient-role-pill-border: hsl(var(--white-500-hsl) / 0.2);
 	--profile-gradient-section-box: hsl(var(--black-500-hsl) / 0.45);
@@ -614,12 +762,8 @@ a[href="https://support.discord.com"] /* hide help */
 	--redesign-button-danger-background: var(--red-430);
 	--redesign-button-danger-pressed-background: var(--red-460);
 	--redesign-button-danger-text: var(--white-500);
-	--redesign-button-overlay-alpha-background: hsl(
-		var(--black-500-hsl) / 0.54
-	);
-	--redesign-button-overlay-alpha-pressed-background: hsl(
-		var(--black-500-hsl) / 0.64
-	);
+	--redesign-button-overlay-alpha-background: hsl(var(--black-500-hsl) / 0.54);
+	--redesign-button-overlay-alpha-pressed-background: hsl(var(--black-500-hsl) / 0.64);
 	--redesign-button-overlay-alpha-text: var(--white-500);
 	--redesign-button-overlay-background: var(--white-500);
 	--redesign-button-overlay-pressed-background: var(--primary-230);
@@ -629,21 +773,13 @@ a[href="https://support.discord.com"] /* hide help */
 	--redesign-button-positive-text: var(--white-500);
 	--redesign-button-primary-alt-background: hsl(var(--brand-500-hsl) / 0);
 	--redesign-button-primary-alt-border: var(--brand-360);
-	--redesign-button-primary-alt-on-blurple-background: hsl(
-		var(--brand-530-hsl) / 0
-	);
+	--redesign-button-primary-alt-on-blurple-background: hsl(var(--brand-530-hsl) / 0);
 	--redesign-button-primary-alt-on-blurple-border: var(--white-500);
-	--redesign-button-primary-alt-on-blurple-pressed-background: var(
-		--brand-530
-	);
+	--redesign-button-primary-alt-on-blurple-pressed-background: var(--brand-530);
 	--redesign-button-primary-alt-on-blurple-pressed-border: var(--brand-360);
 	--redesign-button-primary-alt-on-blurple-text: var(--white-500);
-	--redesign-button-primary-alt-pressed-background: hsl(
-		var(--brand-700-hsl) / 0.16
-	);
-	--redesign-button-primary-alt-pressed-border: hsl(
-		var(--brand-400-hsl) / 0.5
-	);
+	--redesign-button-primary-alt-pressed-background: hsl(var(--brand-700-hsl) / 0.16);
+	--redesign-button-primary-alt-pressed-border: hsl(var(--brand-400-hsl) / 0.5);
 	--redesign-button-primary-alt-pressed-text: var(--brand-360);
 	--redesign-button-primary-alt-text: var(--brand-360);
 	--redesign-button-primary-background: var(--brand-500);
@@ -711,9 +847,7 @@ a[href="https://support.discord.com"] /* hide help */
 	--text-warning: var(--yellow-300);
 	--textbox-markdown-syntax: var(--primary-360);
 	--theme-locked-blur-fallback: hsl(var(--primary-700-hsl) / 0.96);
-	--user-profile-header-overflow-background: hsl(
-		var(--primary-700-hsl) / 0.5
-	);
+	--user-profile-header-overflow-background: hsl(var(--primary-700-hsl) / 0.5);
 	--voice-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--voice-video-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--white: var(--white-500);
@@ -735,10 +869,8 @@ a[href="https://support.discord.com"] /* hide help */
 	--green-430: var(--accent-4);
 	--green-500: var(--accent-4);
 	--green-530: var(--accent-5);
-*/
-	--brand-experiment-15a: var(
-		--mention
-	); /* background of reacted reactions */
+
+	--brand-experiment-15a: var(--mention); /* background of reacted reactions */
 
 	--primary-500: var(--bg-2); /* progress bars */
 	--primary-600: var(--bg-3); /* delete message preview */
