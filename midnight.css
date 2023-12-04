@@ -455,7 +455,7 @@ button.button_afdfd9 /* small buttons */,
 /* window controls */
 [class^='winButton'] > svg {
 	display: none;
-}/*
+}
 [class^='winButton'] {
 	background: none !important;
 	top: 0;
@@ -471,7 +471,7 @@ button.button_afdfd9 /* small buttons */,
 	height: 12px;
 	width: 12px;
 	border-radius: 12px;
-}
+} /*
 [class^='winButton']:hover::after {
 	filter: brightness(0.8);
 }
@@ -480,21 +480,22 @@ button.button_afdfd9 /* small buttons */,
 } */ /*
 [class^='winButtonClose']::after {
 	background-color: hsl(350, 50%, 50%) !important; 
+	overflow: hidden !important;
+   transition:  background-color 200ms ease !important;
 }
 [class^='winButtonMinMax']:nth-child(3)::after {
-	background-color: hsl(50, 50%, 50%) !important;
+	background-color: hsl(150, 50%, 50%) !important;
+	overflow: hidden !important;
+   transition:  background-color 200ms ease !important;
 
 }
 [class^='winButtonMinMax']:nth-child(4)::after {
-	background-color: hsl(150, 50%, 50%) !important; 
+	background-color: hsl(50, 50%, 50%) !important;
+	overflow: hidden !important;
+  transition:  background-color 200ms ease !important; 
 } */
 
 /*NEW*/
-[class^='winButtonMinMax']:nth-child(4){
-  background-color: #fac536 !important;
-	overflow: hidden !important;
-  transition:  background-color 200ms ease !important;
-}
 
 [class^='winButtonMinMax']:nth-child(4)::before{
 	content: '';
@@ -515,11 +516,7 @@ button.button_afdfd9 /* small buttons */,
 	top: 50%;
 }
 
-[class^='winButtonMinMax']:nth-child(3){
-	background: #39ea49 !important;
-	overflow: hidden !important;
-   transition:  background-color 200ms ease !important;
-}
+
 [class^='winButtonMinMax']:nth-child(3)::before{
 	content: '';
 	position: absolute;
@@ -542,7 +539,7 @@ button.button_afdfd9 /* small buttons */,
 	width: 3px;
 	height: 80%;
 	opacity: 0;
-	background: #39ea49;
+	background: hsl(150, 50%, 50%);
 	transition: 200ms;
 }
 [class^='winButtonMinMax']:nth-child(3):hover::before, 
@@ -550,11 +547,7 @@ button.button_afdfd9 /* small buttons */,
 	opacity: 1;
 	top: 50%;
 }
-[class^='winButtonClose']{
-	background: #f25056 !important;
-	overflow: hidden !important;
-   transition:  background-color 200ms ease !important;
-}
+
 [class^='winButtonClose']::before{
 	content: '';
 	position: absolute;
