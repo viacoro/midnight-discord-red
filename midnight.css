@@ -471,13 +471,13 @@ button.button_afdfd9 /* small buttons */,
 	height: 12px;
 	width: 12px;
 	border-radius: 12px;
-} /*
+} 
 [class^='winButton']:hover::after {
 	filter: brightness(0.8);
 }
 [class^='winButton']:active::after {
 	transform: scale(0.9);
-} */ 
+} 
 [class^='winButtonClose'] {
 	background-color: hsl(350, 50%, 50%) !important; 
 	overflow: hidden !important;
