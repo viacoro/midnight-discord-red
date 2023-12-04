@@ -17,7 +17,7 @@
 	--font: 'figtree';
 
 	/* color of green online dot, change to #23a55a for default green */
-	--online-indicator: var(--accent-2);
+	--online-indicator: #23a55a;
 
 	/* top left icon */
 	--moon-icon: block; /* change to none to hide moon icon */
@@ -54,8 +54,6 @@
 	--mention: hsla(346, 60%, 50%, 0.1);
 	/* color of mentions and messages that mention you when hovered */
 	--mention-hover: hsla(346, 60%, 50%, 0.05);
-	/* color of green online dot, change to #23a55a for default green */
-	--online-indicator: var(#23a55a);
 	/* color of bright text on colored buttons */
 	--text-1: hsl(220, 40%, 90%);
 	/* color of headings and important text */
