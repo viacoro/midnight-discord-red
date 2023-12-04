@@ -461,15 +461,15 @@ button.button_afdfd9 /* small buttons */,
 	top: 0;
 	width: calc(var(--spacing) + 8px);
 	height: calc(var(--spacing) + 8px);
-	margin: -2px 4px 0px 0px;
+	margin: 0px 8px 0px 0px;
 }
 [class^='winButtonClose'] {
-	margin: -2px calc(var(--spacing) - 4px) 0px 0px;
+	margin: 0px calc(var(--spacing) - 4px) 0px 0px;
 }
 [class^='winButton'] {
 	content: '';
-	height: 12px;
-	width: 12px;
+	height: 13px;
+	width: 13px;
 	border-radius: 12px;
 } 
 [class^='winButton']:hover {
@@ -536,7 +536,7 @@ button.button_afdfd9 /* small buttons */,
 	top: 100%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotate(-45deg);
-	width: 3px;
+	width: 2px;
 	height: 80%;
 	opacity: 0;
 	background: hsl(150, 50%, 50%);
