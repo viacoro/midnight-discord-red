@@ -480,18 +480,18 @@ button.button_afdfd9 /* small buttons */,
 } 
 [class^='winButtonClose']::after {
 	background-color: hsl(350, 50%, 50%) !important; 
-	overflow: hidden !important;
+	/*overflow: hidden !important;*/
    transition:  background-color 200ms ease !important;
 }
 [class^='winButtonMinMax']:nth-child(3)::after {
 	background-color: hsl(150, 50%, 50%) !important;
-	overflow: hidden !important;
+	/*overflow: hidden !important;*/
    transition:  background-color 200ms ease !important;
 
 }
 [class^='winButtonMinMax']:nth-child(4)::after {
 	background-color: hsl(50, 50%, 50%) !important;
-	overflow: hidden !important;
+	/*overflow: hidden !important;*/
   transition:  background-color 200ms ease !important; 
 }
 
