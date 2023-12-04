@@ -466,32 +466,32 @@ button.button_afdfd9 /* small buttons */,
 [class^='winButtonClose'] {
 	margin: -2px calc(var(--spacing) - 4px) 0px 0px;
 }
-[class^='winButton']::after {
+[class^='winButton'] {
 	content: '';
 	height: 12px;
 	width: 12px;
 	border-radius: 12px;
 } 
-[class^='winButton']:hover::after {
+[class^='winButton']:hover {
 	filter: brightness(0.8);
 }
-[class^='winButton']:active::after {
+[class^='winButton']:active {
 	transform: scale(0.9);
 } 
-[class^='winButtonClose']::after {
+[class^='winButtonClose'] {
 	background-color: hsl(350, 50%, 50%) !important; 
-	/*overflow: hidden !important;*/
+	overflow: hidden !important;
    transition:  background-color 200ms ease !important;
 }
-[class^='winButtonMinMax']:nth-child(3)::after {
+[class^='winButtonMinMax']:nth-child(3) {
 	background-color: hsl(150, 50%, 50%) !important;
-	/*overflow: hidden !important;*/
+	overflow: hidden !important;
    transition:  background-color 200ms ease !important;
 
 }
-[class^='winButtonMinMax']:nth-child(4)::after {
+[class^='winButtonMinMax']:nth-child(4) {
 	background-color: hsl(50, 50%, 50%) !important;
-	/*overflow: hidden !important;*/
+	overflow: hidden !important;
   transition:  background-color 200ms ease !important; 
 }
 
