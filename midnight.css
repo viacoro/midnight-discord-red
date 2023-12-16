@@ -5,29 +5,17 @@
 	/* font, change to 'gg sans' for default discord font*/
 	--font: 'figtree';
 
+	/* top left corner text */
+	--corner-text: 'Midnight';
+
 	/* color of online status dot, change to #23a55a for default green */
 	--online-indicator: #23a55a;
 
-	/* top left text */
+	/* top left corner text */
 	--corner-text: 'Midnight';
 
-	/* home icon */
-	--moon-icon: block; /* change to none to hide moon icon */
-	--discord-icon: none; /* change to block to show default discord icon */
-
-	/* amount of spacing and padding */
-	--spacing: 12px;
-
-	/* animations */
-	--hover-push: 0.2s ease;
-
-	/* corner roundness (border-radius) */
-	--roundness-xl: 22px; /* roundness of big panel outer corners */
-	--roundness-l: 20px; /* popout panels */
-	--roundness-m: 16px; /* smaller panels, images, embeds */
-	--roundness-s: 12px; /* members, settings inputs */
-	--roundness-xs: 10px; /* channels, buttons */
-	--roundness-xxs: 8px; /* searchbar, small elements */
+	/* color of online status dot, change to #23a55a for default green */
+	--online-indicator: var(--accent-2);
 
 	/* accent colors */
 	--accent-1: hsl(346, 80%, 60%);
@@ -46,7 +34,8 @@
 	--mention-hover: hsla(346, 60%, 50%, 0.05);
 
 	/* text colors */
-	--text-1: hsl(220, 40%, 90%); /* bright text on colored elements */
+	--text-0: white; /* text on colored elements */
+	--text-1: var(--text-2); /* other normally white text */
 	--text-2: hsl(220, 25%, 70%); /* headings and important text */
 	--text-3: hsl(220, 15%, 60%); /* normal text */
 	--text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
@@ -60,8 +49,35 @@
 	--hover: hsla(230, 20%, 40%, 0.1); /* channels and buttons when hovered */
 	--active: hsla(220, 20%, 40%, 0.2); /* channels and buttons when clicked or selected */
 	--message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+
+	/* amount of spacing and padding */
+	--spacing: 12px;
+
+	/* animations */
+	--hover-push: 0.2s ease; /* channels/members when hovered */
+
+	/* corner roundness (border-radius) */
+	--roundness-xl: 22px; /* roundness of big panel outer corners */
+	--roundness-l: 20px; /* popout panels */
+	--roundness-m: 16px; /* smaller panels, images, embeds */
+	--roundness-s: 12px; /* members, settings inputs */
+	--roundness-xs: 10px; /* channels, buttons */
+	--roundness-xxs: 8px; /* searchbar, small elements */
+
+	/* direct messages moon icon */
+	/* change to block to show, none to hide */
+	--discord-icon: none; /* discord icon */
+	--moon-icon: block; /* moon icon */
+	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
+
+	/* filter uncolorable elements to fit theme */
+	/* (just set to none, they're too much work to configure) */
+	--login-bg-filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4); /* login background artwork */
+	--green-to-accent-3-filter: hue-rotate(56deg) saturate(1.43); /* add friend page explore icon */
+	--blurple-to-accent-3-filter: hue-rotate(304deg) saturate(0.84) brightness(1.2); /* add friend page school icon */
 }
 
+/* change fonts (edit the variables above, not this part) */
 :root {
 	--font-primary: 'gg sans'; /* change to 'gg sans' for default discord font */
 	--font-display: 'gg sans'; /* change to 'gg sans' for default discord font */
@@ -89,11 +105,15 @@
 .wrapper_bd2abe.minimum_ebf000 /* private call */ {
 	background: var(--bg-4);
 }
-.mainCard__8a660 /* forum post */ {
+.mainCard__8a660 /* forum post */,
+.navRow_bb8efc[data-theme=dark] /* add new account bottom */ {
 	background: var(--bg-3);
 }
-.folderIconWrapper__72239 /* closed folder */ {
+.folderIconWrapper__72239[style="background-color: rgba(88, 101, 242, 0.4);"] /* default color closed folders */ {
 	background: var(--bg-3) !important;
+}
+.folder__17546.hover__043de /* folder opened on hover */ {
+	background-color: var(--bg-2);
 }
 .theme-dark .outer_a41cf3.interactive__01cfa:hover, .theme-dark .outer_a41cf3.active__76f42 /* friend activity cards on hover */ {
 	background: var(--bg-2);
@@ -101,9 +121,6 @@
 #app-mount .searchAnswer_b452e7, /* search filter answer */
 #app-mount .searchFilter__118cb /* search filter */ {
 	background: var(--bg-1);
-}
-.container__871ba /* settings checkbuttons default */ {
-	background: var(--bg-1) !important;
 }
 .chat__52833 /* chat + member list */,
 .sidebar_ded4b5 /* channel sidebar */,
@@ -129,7 +146,7 @@ div.message__80c10.replying_d7b6ad::before /* change reply message bar to neutra
 .toolbar__88c63 /* toolbar button strikethroughs */ {
 	--status-danger: var(--accent-2);
 }
-.expandedFolderIconWrapper__458cf > svg {
+.expandedFolderIconWrapper__458cf > svg[style="color: rgb(88, 101, 242);"] /* default color folder icons */ {
 	color: var(--accent-3) !important;
 }
 .divider_b9338f /* unread divider */,
@@ -145,28 +162,64 @@ div.message__80c10.replying_d7b6ad::before /* change reply message bar to neutra
 path[fill='rgba(35, 165, 90, 1)'] {
 	fill: var(--accent-3);
 }
-.container_a308ae:last-child .icon__28d6c /* explore discoverable servers icon color */ {
-	background-color: #3ba55c;
-	filter: hue-rotate(56deg) saturate(1.43);
+.base__92a12 /* dms number badge */,
+.newMessagesBar__8b6d7 .barButtonBase__8fa46 /* unread bar */,
+.botTagRegular_c89c9a /* bot tag */,
+.endCap__95d53 /* unread divider */,
+.lookFilled__19298.colorBrand_b2253e /* accent buttons */,
+.lookFilled__19298.colorBrand_b2253e .defaultColor__77578 /* accent buttons */,
+.lookFilled__19298.colorBrandNew_fd170a /* accent buttons */,
+.lookFilled__19298.colorGreen__5f181 /* green buttons */,
+.lookFilled__19298.colorRed_d6b062 /* red buttons */,
+.bar_edc096 /* NEW unread pill */,
+.wrapper_d281dd:hover .childWrapper__01b9c, /* default server icon text */ 
+.wrapper_d281dd.selected_f5ec8e .childWrapper__01b9c /* default server icon text */,
+.colorDefault__0b482.focused__27621 /* menu option hover */,
+.colorDefault__0b482.focused__27621 .caret_ce50ce /* popup menu hover caret */,
+.colorDefault__0b482:active:not(.hideInteraction__2790e) /* menu option active */,
+.colorDefault__0b482:active:not(.hideInteraction__2790e) .caret_ce50ce /* menu option active */,
+.interactive:hover /* mention hover */ {
+	color: var(--text-0);
 }
-.container_a308ae:first-child .icon__28d6c {
-	filter: hue-rotate(304deg) saturate(0.84) brightness(1.2);
+.container__871ba /* settings checkbutton background */ {
+	background: var(--bg-1) !important;
 }
-.lookFilled__19298.colorBrand_b2253e .defaultColor__77578 /* vc choose an activity button */ {
-	color: var(--white-500);
+.container__871ba.checked__6bdb0 > .slider__41d94 > rect /* settings checkbutton circle */ {
+	fill: var(--text-0);
+}
+.container__871ba > .slider__41d94 > rect /* settings checkbutton circle */ {
+	fill: var(--text-1);
+}
+.mini_d6d84c .grabber_d2868c /* spotify bar handle */ {
+	margin-top: 5px;
+}
+.grabber_d2868c /* settings slider handle */ {
+	border: none;
+}
+.button__66e8c.buttonColor_a6eb73 /* fix vc buttons */ {
+	color: var(--text-4);
+}
+.button__66e8c.buttonColor_a6eb73:hover /* fix vc buttons hover */ {
+	background-color: var(--hover);
+	color: var(--text-3);
+}
+.iconBadge_fdf33a.isCurrentUserConnected_d9734f /* change server vc badge to neutral */ {
+	background-color: var(--bg-1);
+	color: var(--text-1);
+}
+.bannerVisible__191f6 .headerContent_ee8727 /* server name over banner image */ {
+	color: white;
+}
+.controlIcon__25700 /* fix video maximize button */ {
+	color: var(--text-1);
+	opacity: 0.6;
+}
+.controlIcon__25700:hover /* fix video maximize button hover */ {
+	opacity: 1;
 }
 ::selection {
 	background: var(--accent-4);
-	color: white;
-}
-.vcd-screen-picker-radio[data-checked='true'] > .defaultColor__77578 {
-	color: var(--white-500);
-}
-
-/* fix weird message bar padding */
-.clipContainer__99c30 {
-	padding-top: 0;
-	margin-top: 0;
+	color: var(--text-0);
 }
 
 /* change online indicator color */
@@ -175,9 +228,26 @@ svg[fill='#23a55a'] {
 	fill: var(--online-indicator) !important;
 }
 .status__1c26d[style='background-color: var(--green-360);'],
-.status__1c26d[style='background-color: rgb(35, 165, 90);'],
-.status__1c26d[style='background-color: currentcolor;'] {
+.status__1c26d[style='background-color: rgb(35, 165, 90);'] {
 	background-color: var(--online-indicator) !important;
+}
+
+/* color fix filters */
+.container_a308ae:last-child .icon__28d6c /* explore discoverable servers icon color */ {
+	background-color: #3ba55c;
+	filter: var(--green-to-accent-3-filter);
+}
+.container_a308ae:first-child .icon__28d6c /* explore discoverable servers icon color */ {
+	filter: var(--blurple-to-accent-3-filter);
+}
+.artwork__8fc92 /* filter login image */ {
+	filter: var(--login-bg-filter);
+}
+
+/* fix weird message bar padding */
+.clipContainer__99c30 {
+	padding-top: 0;
+	margin-top: 0;
 }
 
 /* separate header bar */
@@ -301,7 +371,8 @@ a[href="https://support.discord.com"] /* hide help */
 .footer__89240 /* edit modal footer */ {
 	border-radius: var(--roundness-l);
 }
-.roundedBanner__9fa0a /* user profile popout top */ {
+.roundedBanner__9fa0a /* user profile popout top */,
+.banner_b7f1fb /* user profile top when edit */ {
 	border-radius: calc(var(--roundness-l) - 4px) calc(var(--roundness-l) - 4px) 0 0;
 }
 .userPopoutInner_f545a3:before /* user profile popout bottom */,
@@ -331,8 +402,7 @@ a[href="https://support.discord.com"] /* hide help */
 .container__767d1 /* thread link */,
 .input_d266e7 /* settings inputs */,
 .item_b7fb7e /* settings radiobutton bars */,
-.item_b7fb7e .radioBar__40e1b /* settings radiobutton bars */,
-.tooltip__01384 /* server hover name */ {
+.item_b7fb7e .radioBar__40e1b /* settings radiobutton bars */ {
 	border-radius: var(--roundness-s);
 }
 .select__0eb48.open_cd27aa /* vencord plugin show all */ {
@@ -358,7 +428,8 @@ button.button_afdfd9 /* small buttons */,
 .icon_c1b424 /* streaming icon */,
 #vc-spotify-album-image,
 .background__584e7 /* settings nitro tab selected */,
-.hoverButtonGroup__5b423 /* video download button */ {
+.hoverButtonGroup__5b423 /* video download button */,
+.wrapper_c727b6 /* message hover menu */ {
 	border-radius: var(--roundness-xs);
 }
 .hoverButtonGroup__5b423 /* reposition video download button */ {
@@ -601,7 +672,7 @@ button.button_afdfd9 /* small buttons */,
 
 /*NEW END*/
 
-/* add moon */
+/* custom dm button moon icon */
 .childWrapper__01b9c > svg:not(.favoriteIcon_adf80e) {
 	display: var(--discord-icon);
 }
@@ -613,7 +684,9 @@ button.button_afdfd9 /* small buttons */,
 	height: 65%;
 	background: var(--text-4);
 	overflow: hidden;
-	-webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+	-webkit-mask-image: var(--moon-icon-url);
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: none;
 }
 .wrapper_d281dd:hover .childWrapper__01b9c::before {
 	transition: background-color 0.15s ease-out, transform 0.3s ease-out;
@@ -621,7 +694,7 @@ button.button_afdfd9 /* small buttons */,
 }
 .wrapper_d281dd:hover > .childWrapper__01b9c::before,
 .wrapper_d281dd.selected_f5ec8e > .childWrapper__01b9c::before {
-	background: var(--text-1);
+	background: var(--text-0);
 	transform: rotate(-360deg) scale(0.8);
 }
 .lowerBadge__669e7::before {
@@ -635,6 +708,12 @@ button.button_afdfd9 /* small buttons */,
 	background: var(--bg-3);
 	border-radius: 50%;
 }
+/* custom dm button background instead of icon */
+/* .childWrapper__01b9c:has(> svg:not(.favoriteIcon_adf80e)) {
+	background: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png');
+	background-color: transparent !important;
+	background-size: cover;
+} */
 
 /* improve unread divider */
 .divider_b9338f {
@@ -662,15 +741,6 @@ button.button_afdfd9 /* small buttons */,
 	border-right-color: transparent !important;
 }
 
-/* make emoji selector same color */
-.emojiButtonNormal__73cd3 .sprite__294b3 {
-	filter: grayscale(100%) brightness(40%) sepia(0.9) hue-rotate(180deg) !important;
-}
-/* filter login image */
-.artwork__8fc92 {
-	filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4);
-}
-
 /* horizontal server list fix */
 #app-mount .app_b1f720 .base__3e6af {
 	top: calc(var(--server-container) + var(--spacing)) !important;
@@ -692,6 +762,10 @@ button.button_afdfd9 /* small buttons */,
 	margin-left: 18px;
 }
 
+.theme-light {
+	--text-link: var(--accent-5);
+}
+html.theme-light,
 .theme-dark {
 	--activity-card-background: var(--primary-700);
 	--android-navigation-bar-background: var(--primary-830);
@@ -807,7 +881,7 @@ button.button_afdfd9 /* small buttons */,
 	--creator-revenue-info-box-border: var(--teal-400);
 	--creator-revenue-locked-channel-icon: var(--teal-345);
 	--creator-revenue-progress-bar: var(--teal-400);
-	--deprecated-card-bg: hsl(var(--primary-700-hsl) / 0.6);
+	--deprecated-card-bg: var(--bg-3);
 	--deprecated-card-editable-bg: hsl(var(--primary-700-hsl) / 0.3);
 	--deprecated-quickswitcher-input-background: var(--primary-400);
 	--deprecated-quickswitcher-input-placeholder: hsl(var(--white-500-hsl) / 0.3);
@@ -995,10 +1069,12 @@ button.button_afdfd9 /* small buttons */,
 	--green-530: var(--accent-5);
 
 	--brand-experiment-15a: var(--mention); /* background of reacted reactions */
-	--brand-360: var(--accent-3);
+	--brand-360: var(--accent-2); /* invite text */
 
 	--primary-500: var(--bg-2); /* progress bars */
 	--primary-600: var(--bg-3); /* delete message preview */
 	--primary-630: var(--bg-3); /* billing transaction history */
 	--primary-660: var(--bg-3); /* search popout "enter" bar */
+
+	--white-500: var(--text-1);
 }
