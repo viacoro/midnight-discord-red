@@ -11,12 +11,6 @@
 	/* color of online status dot, change to #23a55a for default green */
 	--online-indicator: #23a55a;
 
-	/* top left corner text */
-	--corner-text: 'Midnight';
-
-	/* color of online status dot, change to #23a55a for default green */
-	--online-indicator: var(--accent-2);
-
 	/* accent colors */
 	--accent-1: hsl(346, 80%, 60%);
 	/* color of unread dividers and some indicators */
