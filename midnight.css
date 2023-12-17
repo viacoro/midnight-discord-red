@@ -69,6 +69,7 @@
 	--discord-icon: none; /* discord icon */
 	--moon-icon: block; /* moon icon */
 	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
+	--moon-icon-size: auto;
 
 	/* filter uncolorable elements to fit theme */
 	/* (just set to none, they're too much work to configure) */
@@ -150,7 +151,8 @@ div.message__80c10.replying_d7b6ad::before /* change reply message bar to neutra
 	color: var(--accent-3) !important;
 }
 .divider_b9338f /* unread divider */,
-.mention__1afd3 /* NEW unread pill */ {
+.mention__1afd3 /* NEW unread pill */,
+.mentionsBar__4b47a /* channel list new mention pill */ {
 	--status-danger: var(--accent-3);
 }
 .message__80c10.mentioned__58017:before /* mention message left edge */ {
@@ -178,23 +180,35 @@ path[fill='rgba(35, 165, 90, 1)'] {
 .colorDefault__0b482.focused__27621 .caret_ce50ce /* popup menu hover caret */,
 .colorDefault__0b482:active:not(.hideInteraction__2790e) /* menu option active */,
 .colorDefault__0b482:active:not(.hideInteraction__2790e) .caret_ce50ce /* menu option active */,
+.tabBar__73938 .addFriend__80542.addFriend__80542.addFriend__80542 /* add friend button */,
+.theme-dark .button__57d93, .theme-light .button__57d93 /* notice banner button */,
 .interactive:hover /* mention hover */ {
 	color: var(--text-0);
+}
+.theme-dark .button__57d93, .theme-light .button__57d93 /* notice banner button */ {
+	border-color: var(--text-0);
+}
+.theme-dark .button__57d93:hover,
+.theme-light .button__57d93:hover {
+	border-color: var(--text-0);
+	background-color: var(--text-0);
 }
 .container__871ba /* settings checkbutton background */ {
 	background: var(--bg-1) !important;
 }
-.container__871ba.checked__6bdb0 > .slider__41d94 > rect /* settings checkbutton circle */ {
+.container__871ba.checked__6bdb0 > .slider__41d94 > rect /* settings checkbutton circle */,
+.closeIcon_ae6326 path {
 	fill: var(--text-0);
 }
 .container__871ba > .slider__41d94 > rect /* settings checkbutton circle */ {
 	fill: var(--text-1);
 }
 .mini_d6d84c .grabber_d2868c /* spotify bar handle */ {
-	margin-top: 5px;
+	margin-top: 4px;
+	border-width: 1px;
 }
 .grabber_d2868c /* settings slider handle */ {
-	border: none;
+	border-width: 0;
 }
 .button__66e8c.buttonColor_a6eb73 /* fix vc buttons */ {
 	color: var(--text-4);
@@ -220,6 +234,9 @@ path[fill='rgba(35, 165, 90, 1)'] {
 ::selection {
 	background: var(--accent-4);
 	color: var(--text-0);
+}
+.lookFilled__3dba3.select__0eb48 {
+	border: none;
 }
 
 /* change online indicator color */
@@ -683,9 +700,8 @@ button.button_afdfd9 /* small buttons */,
 	width: 65%;
 	height: 65%;
 	background: var(--text-4);
-	overflow: hidden;
 	-webkit-mask-image: var(--moon-icon-url);
-	-webkit-mask-size: contain;
+	-webkit-mask-size: var(--moon-icon-size);
 	-webkit-mask-repeat: none;
 }
 .wrapper_d281dd:hover .childWrapper__01b9c::before {
@@ -1018,14 +1034,14 @@ html.theme-light,
 	--spoiler-revealed-background: var(--primary-660);
 	--status-danger: var(--red-400);
 	--status-danger-background: var(--red-400);
-	--status-danger-text: var(--white-500);
+	--status-danger-text: var(--text-0);
 	--status-dnd: var(--red-400);
 	--status-idle: var(--yellow-300);
 	--status-offline: var(--primary-360);
 	--status-online: var(--green-360);
 	--status-positive: var(--green-360);
 	--status-positive-background: var(--green-430);
-	--status-positive-text: var(--white-500);
+	--status-positive-text: var(--text-0);
 	--status-speaking: var(--green-360);
 	--status-warning: var(--yellow-300);
 	--status-warning-background: var(--yellow-300);
