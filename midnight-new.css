@@ -9,26 +9,19 @@
 	--corner-text: 'Midnight';
 
 	/* color of status indicators and window controls */
-	--online-indicator: hsl(130, 60%, 60%); /* change to #23a55a for default green */
+	--online-indicator: var(--accent-2); /* change to #23a55a for default green */
 	--dnd-indicator: hsl(340, 60%, 60%); /* change to #f13f43 for default red */
 	--idle-indicator: hsl(50, 60%, 60%); /* change to #f0b232 for default yellow */
 	--streaming-indicator: hsl(260, 60%, 60%); /* change to #593695 for default purple */
 
 	/* accent colors */
-	--accent-1: hsl(346, 80%, 60%);
-	/* color of unread dividers and some indicators */
-	--accent-2: hsl(346, 70%, 50%);
-	/* color of accented buttons */
-	--accent-3: hsl(346, 60%, 40%);
-	/* color of accented buttons when hovered */
-	--accent-4: hsl(346, 60%, 30%);
-	/* color of accented buttons when clicked */
-	--accent-5: hsl(346, 60%, 20%);
-
-	/* color of mentions and messages that mention you */
-	--mention: hsla(346, 60%, 50%, 0.1);
-	/* color of mentions and messages that mention you when hovered */
-	--mention-hover: hsla(346, 60%, 50%, 0.05);
+	--accent-1: hsl(190, 70%, 60%); /* links */
+	--accent-2: hsl(190, 70%, 48%); /* general unread/mention elements */
+	--accent-3: hsl(190, 70%, 42%); /* accent buttons */
+	--accent-4: hsl(190, 70%, 36%); /* accent buttons when hovered */
+	--accent-5: hsl(190, 70%, 30%); /* accent buttons when clicked */
+	--mention: hsla(190, 80%, 52%, 0.1); /* mentions & mention messages */
+	--mention-hover: hsla(190, 80%, 52%, 0.05); /* mentions & mention messages when hovered */
 
 	/* text colors */
 	--text-0: white; /* text on colored elements */
@@ -81,9 +74,8 @@
 
 /* change fonts (edit the variables above, not this part) */
 :root {
-	--font-primary: 'gg sans'; /* change to 'gg sans' for default discord font */
-	--font-display: 'gg sans'; /* change to 'gg sans' for default discord font */
-
+	--font-primary: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-display: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* reduced motion */
@@ -282,10 +274,6 @@ path[fill='var(--white-500)'] {
 }
 .checkbox_fcf2ad /* channel checkboxes */ {
 	border-color: var(--text-4) !important;
-}
-.newBadge__40645 /* fix forum new badge */ {
-	color: var(--accent-2);
-	line-height: 16px;
 }
 
 /* remove shadows */
@@ -652,127 +640,32 @@ button.button__581d0 /* small buttons */,
 	top: 0;
 	width: calc(var(--spacing) + 8px);
 	height: calc(var(--spacing) + 8px);
-	margin: 0px 8px 0px 0px;
+	margin: -2px 4px 0px 0px;
 }
 [class^='winButtonClose'] {
-	margin: 0px calc(var(--spacing) - 4px) 0px 0px;
+	margin: -2px calc(var(--spacing) - 4px) 0px 0px;
 }
-[class^='winButton'] {
+[class^='winButton']::after {
 	content: '';
-	height: 13px;
-	width: 13px;
+	height: 12px;
+	width: 12px;
 	border-radius: 12px;
-} 
-[class^='winButton']:hover {
+}
+[class^='winButton']:hover::after {
 	filter: brightness(0.8);
 }
-[class^='winButton']:active {
+[class^='winButton']:active::after {
 	transform: scale(0.9);
-} 
-[class^='winButtonClose'] {
+}
+[class^='winButtonClose']::after {
 	background-color: var(--dnd-indicator) !important;
-	overflow: hidden !important;
-   transition:  background-color 200ms ease !important;
 }
-[class^='winButtonMinMax']:nth-child(3) {
+[class^='winButtonMinMax']:nth-child(3)::after {
 	background-color: var(--online-indicator) !important;
-	overflow: hidden !important;
-   transition:  background-color 200ms ease !important;
-
 }
-[class^='winButtonMinMax']:nth-child(4) {
+[class^='winButtonMinMax']:nth-child(4)::after {
 	background-color: var(--idle-indicator) !important;
-	overflow: hidden !important;
-  transition:  background-color 200ms ease !important; 
 }
-
-/*NEW*/
-
-[class^='winButtonMinMax']:nth-child(4)::before{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 70%;
-	height: 2px;
-	opacity: 0;
-	background:  rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
-	transition: 200ms;
-}
-
-[class^='winButtonMinMax']:nth-child(4):hover::before{
-	opacity: 1;
-	top: 50%;
-}
-
-
-[class^='winButtonMinMax']:nth-child(3)::before{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 55%;
-	height: 55%;
-	opacity: 0;
-	background:  rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
-	transition: 200ms;
-}
-[class^='winButtonMinMax']:nth-child(3)::after{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-	width: 2px;
-	height: 80%;
-	opacity: 0;
-	background: hsl(150, 50%, 50%);
-	transition: 200ms;
-}
-[class^='winButtonMinMax']:nth-child(3):hover::before, 
-[class^='winButtonMinMax']:nth-child(3):hover::after{
-	opacity: 1;
-	top: 50%;
-}
-
-[class^='winButtonClose']::before{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(-45deg);
-	width: 2px;
-	height: 9px;
-	opacity: 0;
-	background:  rgba(0, 0, 0, 0.65);
-  border-radius: 1px;
-	transition: 200ms;
-}
-[class^='winButtonClose']::after{
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(45deg);
-	width: 2px;
-	height: 9px;
-  opacity: 0;
-	background: rgba(0, 0, 0, 0.65);
-   border-radius: 1px;
-	transition: 200ms;
- 
-}
-[class^='winButtonClose']:hover::before, 
-[class^='winButtonClose']:hover::after{
-	opacity: 1;
-	top: 50%;
-}
-
-/*NEW END*/
 
 /* custom dm button moon icon */
 .childWrapper_a6ce15 > svg:not(.favoriteIcon__901fa) {
@@ -1059,7 +952,7 @@ html.theme-light,
 	--forum-post-extra-media-count-container-background: hsl(var(--primary-660-hsl) / 0.8);
 	--forum-post-tag-background: hsl(var(--primary-660-hsl) / 0.9);
 	--guild-notifications-bottom-sheet-pill-background: var(--primary-700);
-	--header-muted: var(--text-4);
+	--header-muted: red;
 	--header-primary: var(--text-2);
 	--header-secondary: var(--text-4);
 	--home-background: var(--bg-4);
@@ -1202,7 +1095,7 @@ html.theme-light,
 	--text-normal: var(--text-3);
 	--text-positive: var(--green-330);
 	--text-primary: red;
-	--text-secondary: var(--text-3);
+	--text-secondary: red;
 	--text-warning: var(--yellow-300);
 	--textbox-markdown-syntax: var(--primary-360);
 	--theme-locked-blur-fallback: hsl(var(--primary-700-hsl) / 0.96);
@@ -1218,12 +1111,11 @@ html.theme-light,
 	--search-popout-option-fade: none;
 	--search-popout-option-fade-hover: none;
 
-	--brand-260: var(--bg-1); /* new badge */
 	--brand-430: var(--accent-3);
 	--brand-500: var(--accent-3);
 	--brand-560: var(--accent-4);
 	--brand-600: var(--accent-5);
-/*
+
 	--green-330: var(--accent-1);
 	--green-360: var(--accent-3);
 	--green-430: var(--accent-4);
