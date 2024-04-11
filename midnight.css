@@ -169,7 +169,7 @@ div.message_ccca67.replying__38514::before /* change reply message bar to neutra
 	--status-danger: var(--accent-3);
 }
 .message_ccca67.mentioned_fa6fd2:before /* mention message left edge */,
-.botTagRegular_c89c9a /* OP tag */ {
+.botTagOP_fd6360 /* OP tag */ {
 	background: var(--accent-3);
 }
 .container__2ed72.checked__36fdc /* settings checkbuttons */ {
@@ -186,7 +186,7 @@ path[fill='var(--white-500)'] {
 }
 .numberBadge__40d6f /* dms number badge */,
 .newMessagesBar__8b272 .barButtonBase__5e4cf /* unread bar */,
-.botTagRegular_c89c9a /* bot tag */,
+.botTagRegular_fc4b4a /* bot tag */,
 .endCap__95d53 /* unread divider */,
 .lookFilled__950dd.colorBrand__27d57 /* accent buttons */,
 .lookFilled__950dd.colorBrand__27d57 .defaultColor__77578 /* accent buttons */,
@@ -231,7 +231,8 @@ path[fill='var(--white-500)'] {
 	background: var(--bg-1) !important;
 }
 .container__2ed72.checked__36fdc > .slider__41d94 > rect /* settings checkbutton circle */,
-.userMenuItem__7b29e path[fill="var(--white-500)"] /* account switcher account hover */ {
+.userMenuItem__7b29e path[fill="var(--white-500)"] /* account switcher account hover */,
+.colorDefault_e361cf.focused_dcafb9 path {
 	fill: var(--text-0);
 }
 .closeIcon__967e7 path /* alert banner close icon */ {
@@ -239,6 +240,12 @@ path[fill='var(--white-500)'] {
 }
 .container__2ed72 > .slider__41d94 > rect /* settings checkbutton circle */ {
 	fill: var(--text-1);
+}
+.menu__13d0c .menuItemFocused__7beab /* account switch button hover */ {
+	color: var(--text-3);
+}
+.menu__13d0c .menuItemFocused__7beab path /* account switch button hover */ {
+	fill: var(--text-3);
 }
 .mini_d6d84c .grabber_e3daf3 /* spotify bar handle */ {
 	margin-top: 4px;
@@ -958,7 +965,7 @@ html.theme-light,
 	--bg-base-primary: var(--primary-600);
 	--bg-base-secondary: var(--primary-630);
 	--bg-base-tertiary: var(--primary-660);
-	--bg-mod-faint: hsl(var(--primary-500-hsl) / 0.3);
+	--bg-mod-faint: var(--bg-4);
 	--bg-mod-strong: hsl(var(--primary-500-hsl) / 0.54);
 	--bg-mod-subtle: hsl(var(--primary-500-hsl) / 0.48);
 	--bg-surface-overlay: var(--primary-800);
@@ -1024,7 +1031,7 @@ html.theme-light,
 	--card-gradient-pressed-bg: hsl(var(--black-500-hsl) / 0.5);
 	--card-primary-bg: var(--primary-560);
 	--card-primary-pressed-bg: var(--primary-645);
-	--card-secondary-bg: var(--primary-560);
+	--card-secondary-bg: var(--bg-3);
 	--card-secondary-pressed-bg: var(--primary-645);
 	--channel-icon: var(--text-4);
 	--channel-text-area-placeholder: var(--text-5);
@@ -1099,10 +1106,10 @@ html.theme-light,
 	--navigator-header-tint: var(--white-500);
 	--polls-image-normal-border: hsl(var(--black-430-hsl) / 0.9);
 	--polls-victor-border: var(--yellow-300);
-	--polls-victor-fill: var(--yellow-200);
+	--polls-victor-fill: var(--mention);
 	--polls-victor-label: var(--primary-600);
 	--polls-voted-border: var(--green-330);
-	--polls-voted-fill: var(--green-160);
+	--polls-voted-fill: var(--mention);
 	--polls-voted-label: var(--primary-600);
 	--profile-gradient-card-background: hsl(var(--black-500-hsl) / 0.7);
 	--profile-gradient-message-input-border: hsl(var(--primary-500-hsl) / 0.48);

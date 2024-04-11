@@ -1,10 +1,13 @@
 /**
- * @name midnight (Vencord)
- * @description A darkened discord theme. Based on Vencord's colour palette. (https://vencord.dev/)
+ * @name midnight (vencord)
+ * @description A dark, rounded discord theme. Based on Vencord's colour palette. (https://vencord.dev/)
  * @author refact0r, esme, anubis
  * @version 1.6.2
- * @source https://github.com/refact0r/midnight-discord
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/flavors/midnight-vencord.theme.css
  * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
 */
 
 /* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
@@ -83,9 +86,9 @@
 	--green-to-accent-3-filter: none; /* add friend page explore icon */
 	--blurple-to-accent-3-filter: none; /* add friend page school icon */
 }
-/* disable DM spin */
-.wrapper_d281dd:hover > .childWrapper__01b9c::before,
-.wrapper_d281dd.selected_f5ec8e > .childWrapper__01b9c::before {
-	background: var(--text-0);
-	transform: rotate(-0deg) scale(0.8);
+	/* disable DM spin */
+	.wrapper__8436d:hover > .childWrapper_a6ce15::before,
+	.wrapper__8436d.selected_ae80f7 > .childWrapper_a6ce15::before {
+		background: var(--text-0);
+		transform: rotate(-0deg) scale(0.8);
 }
